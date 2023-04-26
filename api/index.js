@@ -17,10 +17,16 @@ app.use(cookieParser());
 mongoose.connect('mongodb+srv://mark:mark123@blog.pkpcvug.mongodb.net/test');
 
 app.post("/register", async (req, res) => {
-  const { username, password } = req.body;
+  const { firstName, lastName, password, course, employmentStatus, country, email, phoneNumber } = req.body;
   try {
     const userDoc = await User.create({
-      username,
+      firstName, 
+      lastName, 
+      course, 
+      employmentStatus, 
+      country, 
+      email, 
+      phoneNumber,
       password: bcrypt.hashSync(password, salt),
     });
     res.json(userDoc);
@@ -31,8 +37,8 @@ app.post("/register", async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  const userDoc = await User.findOne({ username });
+  const { email, password } = req.body;
+  const userDoc = await User.findOne({ email });
   const passOk = bcrypt.compareSync(password, userDoc.password);
   if (passOk) {
     // logged in 

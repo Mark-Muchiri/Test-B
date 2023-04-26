@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+// import { YC } from "../Images/YC SDGs/";
 
 
 function Navbar() {
-  const [ username, setUsername ] = useState(null);
+  const [ firstName, setFirstName ] = useState(null);
   useEffect(() => {
     fetch('http://localhost:4000/profile', {
       credentials: 'include',
@@ -16,28 +17,34 @@ function Navbar() {
 
   return (
     <>
-      <div className="">
-        <div className="navbar bg-base-100 ">
-          <div className="navbar-start top-0">
-            <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-              </label>
-            </div>
-            <a href="/" className="btn btn-ghost normal-case text-xl">daisyUI</a>
+
+      <nav class="bg-white  fixed w-full z-20 top-0 left-0 border-b border-gray-200 ">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="https://flowbite.com/" class="flex items-center">
+            <img src="https://www.canva.com/design/DAFgW0sa8Yc/XhEipG-sYc_36HSk07pcCw/edit?utm_content=DAFgW0sa8Yc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="h-8 mr-3" alt="Youth Champions for SDGs Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap ">Youth Champions for SDGs</span>
+          </a>
+          <div class="flex md:order-2">
+            {firstName && (
+              <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Logout</button>
+            )}
+
+            {!firstName && (
+              <div className="grid grid-cols-2 gap-2">
+                {/* <a href="/login"><button type="button" href="/login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button></a> */}
+                <a href="/register"><button type="button" href="/register" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button></a>
+              </div>
+            )}
+
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li><a href="/">Item 1</a></li>
-              <li><a href="/">Item 2</a></li>
-              <li><a href="/">Item 3</a></li>
-            </ul>
-          </div>
-          <div className="navbar-end">
-            <a href="/" className="btn">Get started</a>
-          </div>
+          
         </div>
-      </div>
+      </nav>
+
     </>
   );
 }
