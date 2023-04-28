@@ -8,6 +8,17 @@ module.exports = {
     themes: ["light",],
   },
 
+  // custom colors
+  theme: {
+    extend: {
+      colors: {
+        blue: {
+          950: '#55b3f3',
+        },
+      }
+    },
+  },
+
   plugins: [ require("daisyui") ],
 }
 
