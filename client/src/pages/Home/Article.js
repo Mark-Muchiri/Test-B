@@ -117,7 +117,9 @@ function Article() {
                   <span class="block text-blue-950 xl:inline"> NAIPAMEI </span>
                 </h1>
                 <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">YS SDGs Director, </p>
-                <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet temporibus eaque aliquam sint at accusamus dignissimos numquam consectetur corporis minus, eos fuga officiis minima natus exercitationem error, aspernatur mollitia quaerat!</p>
+                <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">A competent economist with training and skills in international economics;
+                  identifying gaps & opportunities and applying relevant macro- economic
+                  and microeconomic structures to work on, reduce and solve arising issues.</p>
               </div>
             </div>
 
